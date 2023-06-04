@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block conteudo %} 
+    <style type="text/css">
+        /* Card */
+        @media (min-width: 390px) {
+            .cardz {
+                
+                height: 585px;
+                width: 350px;
+            }
+                
+        }
+        
+        @media (min-width: 768px) {
+            .cardz {
+                width: 490px;
+                height: 595px;
+                
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .cardz {
+                width: 600px;
+                height: 600px;
+            }
+        }
+        .cards{
+            display: inline;
+            justify-content: center;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: transparent;
+            padding: 38px;
+                        
+        }
+        .cardz{
+            max-width: 600px;
+            max-height: 700px;
+            margin: 0 auto;
+            margin-top: 0.01%;
+            margin-bottom: 5%;
+            padding: 20px;
+            border-radius: 20px;
+            
+        }
+
+        input[id=nome], input[id=email], textarea {
+            font-size:1em; 
+            color:#555; 
+            width: 90%;
+            outline:none; 
+            border:1px #dee5ed solid; 
+            border-radius:4px; 
+            padding:0.6em; 
+            transition: 0.3s; 
+        }
+
+        label{
+            float:left; 
+            width:100%; 
+            margin-bottom:1.2em; 
+        }
+        #but{
+            background-color:rgb(37,174,230); 
+            width:50%; display:block; 
+            margin:auto; cursor:pointer; 
+            border-radius:5px;  
+            border:0; 
+            padding:0.8em 0.0em; 
+            color:#fff; 
+            font-size:12px;  
+            text-size-adjust: 18px;
+            text-align: center;
+            transition: 0.3s;   
+        }
+        #but:hover{
+            background-color:#333; 
+        }
+        label input:focus { box-shadow:0 0 5px 0px rgb(178,216,231); border:1px rgb(37,174,230) solid; color:rgb(37,174,230);}
+        label select:focus   { box-shadow:0 0 5px 0px rgb(178,216,231); border:1px rgb(37,174,230) solid; }
+        label textarea:focus { box-shadow:0 0 5px 0px rgb(178,216,231); border:1px rgb(37,174,230) solid; color:rgb(37,174,230);}
+
+    </style>
+    
+    <br>
+    <div class="cards ">
+        <div></div>
+        <div class="cardz card">
+            <br>
+            <h2 style="text-align: center;">
+                Fale Conosco:
+            </h2>
+            <h6 style="text-align: center; font-size: 17px;">
+                <q>
+                    Nessa página web, você pode entrar em contato com a equipe de produção.
+                </q>
+            </h6>
+            <p style="text-align: center; font-size: 13px;">
+                Use para falar sobre dúvidas, felicitações, agradecimentos, opiniões e sugestões!
+            </p>
+            <form action='' method="POST">
+                {% csrf_token %}
+                <label for="nome">Seu nome:
+                    <input type="text" required id="nome" name="nome">
+                </label>
+                <label for="email">Seu email:
+                    <input type="email" required id="email" name="email" class="fade_8S">
+                </label>
+                <label for="message">Sua mensagem:
+                    <textarea type='text' name="Sua mensagem" cols="20" rows="3" required id="message"></textarea>
+                </label>
+                <input type="submit" style="align-items: rigth; font-size: 14px; size: 50%;" id="but" class="btn btn-primary"></button>
+
+            </form>
+    
+        </div>
+        
+    </div>
+ 
+    <body style="background-color: #708090">
+
+
+{% endblock conteudo %}
